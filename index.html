@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://use.fontawesome.com/e175f0cc50.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1 class="title">TodoList</h1>
+      <form class="add-item">
+        <input class="user-input" autofocus autocomplete="off" placeholder="Add a task and hit enter" type="text" name="name" value="">
+      </form>
+      <ul class="todo-list">
+      </ul>
+    </div>
+
+
+    <!-- TO-DO ITEM TEMPLATE -->
+    <script id="item" type="text/x-handlebars-template">
+      <div class="row">
+
+        <div class="cell">
+          {{#if taskIsComplete }}
+            <input id="status-input--{{id}}" class="status" type="checkbox" checked="true" />
+          {{else}}
+            <input id="status-input--{{id}}" class="status" type="checkbox" />
+          {{/if}}
+          <label id="status-label--{{id}}" class="fa" for="status-input--{{id}}">
+          </label>
+        </div>
+
+        <div class="cell">
+          <p class="content" contenteditable>{{content}}</p>
+        </div>
+
+        <div class="cell">
+           <button class="delete">
+             <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+           </button>
+        </div>
+
+      </div>
+
+    </script>
+
+    <script src="handlebars.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>
